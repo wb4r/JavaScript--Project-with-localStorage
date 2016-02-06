@@ -1,0 +1,144 @@
+.index-col,
+.todos-col {
+  min-height: 500px;
+}
+
+.index-col {
+  background-color: #474e78;
+  height: 100vh;
+}
+.index-col h4,
+.index-col ol,
+.index-col li {
+  color: white;
+}
+
+.todos-col {
+  height: 100vh;
+  background-color: ;
+  border-right: 4px solid #666666;
+}
+
+.top-row-make-space {
+  min-height: 40px;
+}
+
+li {
+  list-style-type: none;
+}
+
+.inside-list-items-container ol {
+  padding-left: 0px;
+}
+
+h3 {
+  margin-bottom: 25px;
+}
+.list-title-and-trash-icon-row span {
+  margin-top: 25px;
+}
+
+body a {
+  text-decoration: none;
+}
+
+#ol-of-pending-lists li a,
+#ol-of-completed-lists li a
+ {
+  color: white;
+}
+
+#ol-of-pending-lists li:hover,
+#ol-of-completed-lists li:hover {
+  background-color: #9c9faf;
+  cursor: pointer;
+}
+
+#ol-items {
+  min-height: 100px;
+}
+
+.lined-through {
+  text-decoration: line-through;
+}
+
+.not-lined-through {
+  text-decoration: none;
+}
+
+.glyphicon {
+  cursor: pointer;
+}
+
+.glyphicon-in-item,
+.glyphicon-in-item-trash,
+.glyphicon-in-item-description {
+  margin-top: 5px;
+}
+
+.each_item {
+  font-size: 1.7rem;
+}
+
+.input-text {
+  display: none;
+}
+
+#lean_overlay {
+    position: fixed;
+    z-index:100;
+    top: 0px;
+    left: 0px;
+    height:100%;
+    width:100%;
+    background: #000;
+    display: none;
+}
+
+.btn-saved {
+  background-color: green;
+  color: white;
+}
+
+.footer {
+  padding-top: 25px;
+  padding-bottom: 15px;
+  background-color: #161926;
+  color: white;
+}
+
+.footer a {
+  color: white;
+
+}
+
+.hamb-btn-div {
+  /*display: none;*/
+}
+
+.hidden {
+  display: none;
+}
+
+.shown {
+  display: block;
+}
+
+.trashed-list {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.trashed-list:hover {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.trashed-list:visited {
+  text-decoration: line-through;
+  color: gray;
+}
+
+#delete-ls {
+  color: black;
+}

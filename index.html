@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>LS Assessment FE-3</title>
+	<meta charset="UTF-8">
+  <meta name="language" content="english" />
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="jquery.modal.min.js" type="text/javascript" charset="utf-8"></script>
+  <link rel="stylesheet" href="jquery.modal.css" type="text/css" media="screen" />
+  <script src="js/underscore-min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/navbar-collapse.js"></script>
+  <script src="js/localStorage-comms.js"></script>
+  <script src="js/handlebars-v4.0.5.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+</head>
+<body>
+
+  <div class="container global-container">
+    <div class="row global-row">
+      <div id="index-col" class="col-xs-4 index-col">
+        <div class="row top-row-make-space">
+          <div class="col-xs-1 hamb-btn-div">
+            <h3><span id="hamb-btn-show" class="glyphicon glyphicon-th-large" style="color: white"></span></h3>
+          </div>
+        </div>
+        <div id="col-collapse" class="col-xs-11 col-xs-offset-1 left-row-make-space-left">
+          <div class="row add-list-button">
+            <button id="add-pending-list" class="btn btn-sm" type="" name="">+ New List</button>
+          </div>  <!-- end of add-list-button  -->
+          <div class="row top-row-make-space"></div>
+          <div class="pending-list-container">
+            <h4><span class="glyphicon glyphicon-list"></span>&nbsp;Pending:</h4>
+            <div class="row row-of-lists">
+              <ol id="ol-of-pending-lists">
+              </ol>
+            </div>  <!-- end of row-of-lists  -->
+          </div>  <!-- end of pending-list-container  -->
+          <div class="row top-row-make-space"></div>
+          <div class="completed-list-container">
+            <h4><span class="glyphicon glyphicon-ok-sign"></span>&nbsp;Completed:</h4>
+            <div class="row row-of-lists">
+              <ol id="ol-of-completed-lists">
+              </ol>
+            </div>
+          </div>  <!-- end of completed-list-container  -->
+        </div>
+      </div>  <!-- end of index-col  -->
+      <div class="col-xs-8 todos-col">
+        <div class="row top-row-make-space"></div>
+          <div class="col-xs-10 col-xs-offset-1 inside-list-items-container">
+            <div class="row list-title-and-trash-icon-row">
+              <div class="col-xs-10">
+                <h3 id="list-title">Click a list to display</h3>
+              </div>
+              <div class="col-xs-1">
+                <a><span id="trash-it" class="glyphicon glyphicon-trash" title="Trash List"></span></a>
+              </div>
+            </div>  <!-- end of list-title-and-trash-icon-row  -->
+            <a id="add-new-todo" href="#">+ &nbsp; Add new to do:</a>
+            <div id="ol-items">
+              <!-- SCRIPT 1   -->
+              <script id="item" type="text/x-handlebars">
+                <li id="{{this.id}}">
+                  <hr>
+                  <div class="row each_item">
+                    <div class="checkbox col-xs-9">
+                      <input class="checkbox checkbox-inline not-lined-through" type="checkbox" name="item1" value="item{{this.nr}}" data-parent={{this.parent}}>
+                      <label>
+                        {{this.title}}
+                      </label>
+                      <input class="input-text input-text-{{this.id}}" type="text">
+                    </div>
+                    <div class="col-xs-3">
+                      <a><span style="float: right;" class="glyphicon glyphicon-pencil glyphicon-in-item" title="Change Items Name"></span></a>
+                      <a><span class="glyphicon glyphicon-trash glyphicon-in-item-trash" title="Trash Item"></span></a>
+                      <a href="#themodal" rel="modal:open"><span id="descript-{{this.id}}" class="glyphicon glyphicon-plus glyphicon-in-item-description" title="Add Description"></span></a>
+                    </div>
+                  </div>  <!-- end of each-item  -->
+                </li>   <!-- end of li => each items li  -->
+              </script>
+              <!-- end of  SCRIPT 1 -->
+              <div id="themodal" class="modal" style="display: none">
+                <p><strong>Task Description: </strong></p>
+                <textarea id="textarea-desc" class="textarea-{{this.id}}" name="name" rows="8" cols="40"></textarea>
+                <button id="save-btn" class="btn btn-sm" type="button" name="button">Save</button>
+              </div>  <!-- end of modal  -->
+              <!-- SCRIPT 2   -->
+              <script id="items" type="text/x-handlebars">
+                <ol>
+                  {{#each items}}
+                  <strong>{{>item}}</strong>
+                  {{/each}}
+                </ol>
+              </script>
+              <!-- end of SCRIPT 2  -->
+            </div>
+          </div>  <!-- end of inside-list-items-container  -->
+      </div>  <!-- end of todos-col  -->
+    </div>  <!-- end of global-row  -->
+  </div>  <!-- end of global-container  -->
+
+<footer>
+  <div class="row footer">
+    <div class="col-xs-7 col-xs-offset-1 footer">
+      <button id="delete-ls" class="btn btn-sm btn-warning"type="button" name="button">Delete localStorage</button>
+    </div>
+    <div class="col-xs-3 footer">
+      <p><a href="http://www.thewebdesign.studio"> &copy; theWebDesign . STUDIO</a></p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
